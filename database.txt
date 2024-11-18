@@ -1,0 +1,15 @@
+USE currency_db;
+
+CREATE TABLE exchange_rates (
+    currency_code VARCHAR(10) PRIMARY KEY,
+    exchange_rate DOUBLE NOT NULL
+);
+
+CREATE TABLE conversion_logs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    from_currency VARCHAR(10),
+    to_currency VARCHAR(10),
+    amount DOUBLE,
+    converted_amount DOUBLE,
+    conversion_time DATETIME
+);
